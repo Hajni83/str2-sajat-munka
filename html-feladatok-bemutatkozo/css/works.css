@@ -1,0 +1,21 @@
+.menu {
+margin: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    border: 1px solid;
+}
+
+p {
+    line-height: 1.625;
+    font-weight: 300;
+}
+
+section {
+    margin-bottom: 60px;;
+}

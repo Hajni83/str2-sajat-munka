@@ -7,3 +7,10 @@ nav{
   text-decoration: none;
   color: black;
 }
+
+img {
+    width: 30%;
+    padding-left: 15px;
+    margin-left: 15px;
+    float: left;
+}

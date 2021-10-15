@@ -1,0 +1,14 @@
+nav{
+    margin:30px 0px;
+}
+
+.menu {
+  margin: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+img {
+  margin-bottom: 30px;
+  box-shadow: 10px 5px 5px gray;
+}

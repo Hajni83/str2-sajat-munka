@@ -1,0 +1,66 @@
+h1 {
+  text-align: left;
+}
+
+p {
+  text-align: center;
+}
+
+.menu {
+  margin: 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.item {
+  display: block;
+  text-align: center;
+  margin: 30px;
+}
+.kep1 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  height: 100%;
+}
+
+.text1 {
+  display: block;
+  text-align: center;
+  margin: 20px;
+}
+
+.column {
+  padding: 5px;
+  display: inline;
+}
+
+.text2 {
+  position: relative;
+  right: 30px;
+  display: inline;
+  top: 30px;
+}
+
+div.item2 {
+  vertical-align: top;
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  background-color: grey;
+  border: 1px solid;
+}
+
+.caption {
+  display: block;
+}
+
+footer {
+  padding: 4px 0px;
+}

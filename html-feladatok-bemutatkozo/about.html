@@ -1,40 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About page</title>
-    <link rel="stylesheet" href="./css/about.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/about.css" />
+  </head>
+  <body>
     <header id="top">
-        <h1>Rólunk</h1>
+      <h1>Rólunk</h1>
     </header>
-    <nav><a class="menu" href="./index.html">Home</a>
-        <a class="menu" href="./works.html">Works</a>
-        <a class="menu" href="./gallery.html">Gallery</a>
-        <a class="menu" href="./about.html">About</a>
+    <nav>
+      <a class="menu" href="./index.html">Home</a>
+      <a class="menu" href="./works.html">Works</a>
+      <a class="menu" href="./gallery.html">Gallery</a>
+      <a class="menu" href="./about.html">About</a>
     </nav>
     <main>
-        
-        <p>In this example, the image will float to the left in the paragraph, and the text in the paragraph will wrap around the image.</p>
-        
-    <aside>
-        <p><img src="./image/csalad.jpg" alt="" style="width:170px;height:170px;margin-right:15px;">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta.</p>
-            <ul>
-                <li>fffff</li>
-                <li>dssaa</li>
-                <li>jkkol</li>
-            </ul>
-            <ol>
-                <li>rtzui</li>
-                <li>hjklé</li>
-                <li>njiléé</li>
-            </ol>
-    </aside>
-</main>
-    <footer><a type="button" href="#top"><button>Ugrás a lap tetejére</button></a></footer>
-</body>
+      <section>
+        <p>
+          Mi egy öt tagú család vagyunk.Apa, anya és 3 kisgyerek, 2 kislány és
+          egy kisfiú.
+        </p>
+
+        <aside>
+          <p>
+            <img
+              src="./image/csalad.jpg"
+              alt=""
+              style="width: 170px; height: 170px; margin-right: 15px"
+            />
+            Budapesttől néhány kilométerre, Dunakeszin lakunk egy szép kis
+            családi házban.
+          </p>
+          Három gyerkőcünk van:
+          <ul class="names">
+            <li>Fanni</li>
+            <li>Zsófi</li>
+            <li>Patrik</li>
+          </ul>
+          <p>
+            A lányok iskolába, óvodába járnak. Az egy szem kisfiúval pedig még
+            anya itthon van. Apa pedig otthonról dolgozik. Szabadidőben sokat
+            játszunk, barátokkal találkozunk. Hétvégén szeretünk nagyokat
+            kirándulni.
+          </p>
+          <p>Kedvenc időtöltésünk:</p>
+          <ol>
+            <li>lovaglás</li>
+            <li>úszás</li>
+            <li>futás</li>
+          </ol>
+          <p>Szeretünk kertészkedni szép időben a kertünkben.</p>
+        </aside>
+      </section>
+    </main>
+    <form  method="post">
+        <h3>Lépj kapcsolatba velünk</h3>
+        <ul class="form">
+         <li class="field">
+           <label for="name">Név:</label>
+           <input type="text" id="name" name="user_name" required minlength="5">
+         </li>
+         <li class="field">
+           <label for="mail">E-mail:</label>
+           <input type="email" id="mail" name="user_email" required>
+         </li>
+         <li class="field">
+           <label for="msg">Üzenet:</label>
+           <textarea id="msg" name="user_message" required minlength="20"></textarea>
+         </li>
+         
+            <button type="submit">Küldés</button>
+                 </ul>
+       </form>
+    <footer>
+      <a type="button" href="#top"><button>Ugrás a lap tetejére</button></a>
+    </footer>
+  </body>
 </html>

@@ -1,5 +1,6 @@
-nav{
-    margin:30px 0px;
+nav {
+  margin: 30px 0px;
+  text-align: center;
 }
 
 .menu {
@@ -9,8 +10,76 @@ nav{
 }
 
 img {
-    width: 30%;
-    padding-left: 15px;
-    margin-left: 15px;
-    float: left;
+  width: 30%;
+  padding-left: 15px;
+  margin-left: 15px;
+  float: left;
 }
+
+.names{
+  margin-top: 30px;
+}
+
+p{
+  text-align: justify;
+}
+
+form {
+  
+  width: 100%;
+
+  
+  border: 2px solid rgb(90, 88, 88);
+  border-radius: 1em;
+}
+
+.form {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.field {
+  margin-top: 1em;
+}
+
+h3{
+  text-align: center;
+}
+
+label {
+  display: inline-block;
+  width: 90px;
+  float: left;
+}
+
+input,
+textarea {
+  font: 1em sans-serif;
+
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #000;
+}
+
+textarea {
+  vertical-align: top;
+  height: 5em;
+}
+
+.button {
+  padding-left: 90px;
+}
+
+button {
+  margin-left: 0.5em;
+}
+
+
+

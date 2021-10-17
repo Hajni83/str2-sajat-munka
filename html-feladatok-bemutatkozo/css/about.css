@@ -77,7 +77,26 @@ footer {
   margin-top: 20px;
 }
 
+.center {
+  margin: auto;
+  display: flex;
+  margin-bottom:20px;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 @media screen and (min-width: 1200px) {
+  header {
+    margin: 40px 0 0 20px;
+  }
+  h1 {
+    display: inline;
+  }
+
   nav {
     margin-top: 0px;
     font-size: 20px;
@@ -89,15 +108,10 @@ footer {
   textarea {
     width: 300px;
   }
+
+  footer {
+    text-align: center;
+    margin: 25px 0px;
+  }
 }
 
-.center {
-  margin: auto;
-  display: flex;
-}
-
-.flexCenter {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}

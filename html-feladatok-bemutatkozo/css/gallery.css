@@ -1,6 +1,8 @@
-nav{
-    margin:30px 0px;
-    text-align: center;
+nav {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px 30px 25px 0px;
+  font-size: 15px;
 }
 
 .menu {
@@ -9,8 +11,20 @@ nav{
   color: black;
 }
 
+section div {
+  margin: 30px;
+}
+
 img {
-  margin-bottom: 30px;
+  width: 100%;
   box-shadow: 10px 5px 5px gray;
 }
 
+@media screen and (min-width: 1200px) {
+  nav {
+    margin-top: 0px;
+    font-size: 20px;
+    word-spacing: 40px;
+    margin-right: 30px;
+  }
+}

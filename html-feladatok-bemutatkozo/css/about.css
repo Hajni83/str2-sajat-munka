@@ -1,6 +1,8 @@
 nav {
-  margin: 30px 0px;
-  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0px 30px 25px 0px;
+  font-size: 15px;
 }
 
 .menu {
@@ -16,16 +18,17 @@ img {
   float: left;
 }
 
-.names{
+.names {
   margin-top: 30px;
 }
 
-p{
+p {
   text-align: justify;
 }
 
 form {
-  width: 100%;
+  width: 50%;
+  margin: auto;
   border: 2px solid rgb(90, 88, 88);
   border-radius: 1em;
 }
@@ -41,20 +44,13 @@ form {
   margin-top: 1em;
 }
 
-h3{
+h3 {
   text-align: center;
-}
-
-label {
-  width: 90px;
-  float: left;
 }
 
 input,
 textarea {
   font: 1em sans-serif;
-
-  width: 300px;
   box-sizing: border-box;
   border: 1px solid #999;
 }
@@ -77,9 +73,31 @@ button {
   margin-left: 0.5em;
 }
 
-footer{
-  margin-top:20px;
+footer {
+  margin-top: 20px;
 }
 
+@media screen and (min-width: 1200px) {
+  nav {
+    margin-top: 0px;
+    font-size: 20px;
+    word-spacing: 40px;
+    margin-right: 30px;
+  }
 
+  input,
+  textarea {
+    width: 300px;
+  }
+}
 
+.center {
+  margin: auto;
+  display: flex;
+}
+
+.flexCenter {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

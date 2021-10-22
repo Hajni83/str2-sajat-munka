@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS ismétlés,gyakorlás</title>
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+      <div class="dark"></div>
+    <header class="header--dark">
+      <h3 class="header__title">Admin Page</h3>
+      <div class="header__search">
+          <input type="text"  placeholder="Search for..." name="search" class="search__input">
+          <button  type="submit class="search__btn">
+            <i class="fa fa-search"></i>
+          </button>
+      </div>
+    </header>
+
+    <main>
+        <aside>
+          <nav class="main_nav"></nav>  
+          <ul class="nav_ul">
+              <li>CORE</li>
+              <li><a href=""><i class="fa fa-tachometer"></i>
+                Dashboard</li></a>
+              <li>INTERFACE</li>
+              <li><a href=""><i class="fa fa-windows"></i>
+                Layouts</li></a>
+                <li><a href=""><i class="fa fa-bookmark"></i>
+                    Pages</li></a>
+              <li>ADDONS</li>
+              <li><a href=""><i class="fa fa-area-chart"></i>
+                Charts</li></a>
+                <li><a href=""><i class="fa fa-table"></i>
+                    Tables</li></a>
+          </ul>
+        </aside>
+        <section class="content">
+            <h1>Dashboard</h1>
+            <div class="main__breadcrumb">Dashboard</div>
+            <div class="main__cards">
+                <div class="main__card main__card--blue">
+                    <div class="card__top">Primary Card</div>
+                    <div class="card__bottom">View Details</div>
+                </div>
+                <div class="main__card main__card--yellow">
+                    <div class="card__top">Warning Card</div>
+                    <div class="card__bottom">View Details</div>
+                </div>
+                <div class="main__card main__card--green">
+                    <div class="card__top">Success Card</div>
+                    <div class="card__bottom">View Details</div>
+                </div>
+                <div class="main__card main__card--red">
+                    <div class="card__top">Danger Card</div>
+                    <div class="card__bottom">View Details</div>
+                </div>
+            </div>
+        </div>
+
+
+        </section>
+    </main>
+
+  </body>
+</html>

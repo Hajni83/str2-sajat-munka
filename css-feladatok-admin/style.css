@@ -1,3 +1,7 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
 .dark {
     height: 60px;
     background-color: rgb(0,0,0);
@@ -14,6 +18,12 @@
     font-size: 1.25rem;
     margin-left:20px;
     float:left;
+}
+
+.fa-bars {
+    position: relative;
+    top: 24px;
+    left: 150px;
 }
 
 .header__search{

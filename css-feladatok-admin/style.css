@@ -98,12 +98,9 @@ ul {
   height: 100%;
 }
 
-.fa-angle-right {
-  margin-left: 110px;
-}
-
-.Pages {
-  margin-left: 130px;
+.pages {
+  float: right;
+  margin-right: 10px;
 }
 
 .nav_ul li {
@@ -208,5 +205,17 @@ ul li {
   background-color: rgb(220, 53, 69);
 }
 
+@media screen and (max-width: 1100px) {
+  .main__cards {
+    display: initial;
+  }
+}
+
 @media screen and (max-width: 700px) {
+  .nav_ul {
+    width: 110px;
+  }
+  .displayNone {
+    display: none;
+  }
 }

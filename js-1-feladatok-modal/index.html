@@ -21,9 +21,19 @@
         mollit anim id est laborum."
       </p>
       <div class="button">
-          <button type="button" class="green">Okey</button> 
-          <button type="button" class="red">Cancel</button>
-        </div>
+        <button type="button" class="green">Okey</button>
+        <button type="button" class="red">Cancel</button>
+      </div>
+    </div>
+
+    <div>
+      <button type="button" onclick="param()">Click</button>
     </div>
   </body>
+  <script>
+    function param() {
+      const div = document.querySelector("div");
+      div.style.display = 'initial';
+    }
+  </script>
 </html>

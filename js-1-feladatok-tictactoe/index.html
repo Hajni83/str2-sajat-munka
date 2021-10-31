@@ -6,19 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TicTacToe</title>
     <link rel="stylesheet" href="style.css">
-    <script src="./template.js"></script>
+    
 </head>
 <body>
     <div class="grid-container">
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>  
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>  
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>
-        <div class="grid-item"></div>  
+        <div data-cell="0" data-row="0" class="cell grid-item"></div>
+        <div data-cell="1" data-row="0" class="cell grid-item"></div>
+        <div data-cell="2" data-row="0" class="cell grid-item"></div>
+        <div data-cell="0" data-row="1" class="cell grid-item"></div>
+        <div data-cell="1" data-row="1" class="cell grid-item"></div>
+        <div data-cell="2" data-row="1" class="cell grid-item"></div>
+        <div data-cell="0" data-row="2" class="cell grid-item"></div>
+        <div data-cell="1" data-row="2" class="cell grid-item"></div>
+        <div data-cell="2" data-row="2" class="cell grid-item"></div>
       </div>
+
+      <div class="message">Let's play!</div>
+      <button>Start</button>
+      <script src="./template.js"></script>
 </body>
 </html>

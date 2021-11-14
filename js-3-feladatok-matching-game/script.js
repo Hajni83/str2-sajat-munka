@@ -8,6 +8,7 @@ let sec = 0;
 let min = 0;
 let numOfFoundPairs = 0;
 let intervalId;
+let clickNumber = 0;
 
 function flipCard() {
     if (!firstCardFlip) {
@@ -25,22 +26,28 @@ function flipCard() {
             document.getElementById("time").innerHTML = min + ":" + sec;
         }, 1000);
         firstCardFlip = true;
-    } 
-    this.classList.toggle('flip');
+    }
+    if (clickNumber < 2) {
 
-    if (!hasFlippedCard){
-        hasFlippedCard = true;
-        firstCard = this;
-    }else {
-        hasFlippedCard = false;
-        secondCard = this;
-
-        checkForMatch();
+        if (!hasFlippedCard){
+            this.classList.toggle('flip');
+            hasFlippedCard = true;
+            firstCard = this;
+            clickNumber++;
+        }else {
+            if (firstCard != this) {
+                this.classList.toggle('flip');
+                hasFlippedCard = false;
+                secondCard = this;
+                clickNumber++;
+                checkForMatch();
+            }
+        }
     }
 }
 
 function checkForMatch() {
-    if (firstCard.dataset.framework === secondCard.dataset.framework) {
+    if ((firstCard != secondCard) && (firstCard.dataset.framework === secondCard.dataset.framework)) {
         disableCards();
         numOfFoundPairs++;
         checkEndGame();
@@ -65,13 +72,15 @@ const checkEndGame = () => {
 function disableCards(){
     firstCard.removeEventListener ('click', flipCard);
     secondCard.removeEventListener('click', flipCard);
+    clickNumber = 0;
 };
 
 function unflipCards(){
     setTimeout(() =>{
         firstCard.classList.remove('flip');
         secondCard.classList.remove('flip');
-        },1500);
+        clickNumber = 0;
+        },1000);
 };
 
 function unflipAllCards() {

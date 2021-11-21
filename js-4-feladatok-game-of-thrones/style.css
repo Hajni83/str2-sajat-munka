@@ -8,7 +8,7 @@
 }
 
 form {
-    min-width: 250px;
+  min-width: 250px;
 }
 
 h1 {
@@ -53,16 +53,45 @@ body {
   overflow: hidden;
   height: 100vh;
 }
+
 main {
   background-image: url("./assets/site/mapblue.jpg");
   overflow-y: auto;
 }
-ul {
-  list-style: none;
+
+.wrapper_inner {
+  width: 80%;
+  margin: 0px auto;
 }
-li {
-  color: #fff;
+
+img {
+  margin: auto;
+  display: block;
+  object-fit:contain;
+  width:75px;
 }
+span {
+  text-align: center;
+  display: block;
+}
+
+.wrapper_inner{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.div {
+  margin:5px;
+}
+
+span {
+  color: rgb(139,69,19);
+  font-family:'Merriweather', serif;;
+  font-size:10px;
+  margin:15px;
+}
+
 aside {
   border-right: 1px solid #ededed;
   background-color: rgb(73, 70, 70);
@@ -75,6 +104,8 @@ aside {
 
   height: 100%;
 }
+
+
 @media (max-width: 500px) {
   .wrapper {
     flex-direction: column-reverse;
@@ -90,8 +121,13 @@ aside {
     height: initial;
     flex-direction: initial;
   }
-}
-.wrapper_inner {
-  width: 80%;
-  margin: 0px auto;
+
+  .wrapper_inner{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+ 
+  }
+
+  
 }

@@ -22,7 +22,6 @@ h1 {
 .search-container {
   margin-top: auto;
   padding-left: 1.5rem;
-  padding-bottom: 2rem;
 }
 
 input[type="text"] {
@@ -32,18 +31,14 @@ input[type="text"] {
   border: none;
 }
 
-.search-container button {
-  padding: 5px 7px;
-  margin-top: 8px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  cursor: pointer;
+input { font-family: 'FontAwesome'; }
+
+#notFoundSpan {
+  color: white;
 }
 
-.search-container button:hover {
-  background: rgb(85, 83, 83);
+#character p {
+  color: white;
 }
 
 body {
@@ -58,7 +53,11 @@ main {
 
 .wrapper_inner {
   width: 80%;
+  max-width: 1080px;
   margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 img {
@@ -72,15 +71,9 @@ span {
   display: block;
 }
 
-.wrapper_inner{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
 .div {
   margin:20px;
-  width: 95px;
+  width: 68px;
 }
 
 span {
@@ -132,8 +125,9 @@ aside {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
- 
   }
 
-  
+  .picture {
+    max-width: 200px;
+  }
 }

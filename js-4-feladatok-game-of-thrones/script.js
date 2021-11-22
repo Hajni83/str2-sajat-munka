@@ -36,21 +36,33 @@ const getActors = async (url = "./json/got.json") => {
     })
   });
 
-  let form = document.getElementsByTagName('form')[0];
+  let typingTimer;
+  let doneTypingInterval = 1000;
+  let input = document.getElementById("input");
+
+  input.addEventListener('keyup', () =>{
+    clearTimeout(typingTimer);
+    typingTimer = setTimeout(doneTyping, doneTypingInterval);
+  });
+
+  input.addEventListener('keydown', () => {
+    clearTimeout(typingTimer);
+  });
+
   let foundElement;
-  form.addEventListener('submit', () =>{
-    let input = document.getElementById("input");
-    
+
+  const doneTyping = () => {
     foundElement = actors.findIndex((element)=>{
-      element.toLowerCase() === input.value;
+      return element.name.toLowerCase() === input.value;
     });
 
     if (foundElement != -1 ) {
+      document.getElementById("notFoundSpan").innerHTML = "";
       loadOntoSidebar(character, foundElement);
     } else {
       document.getElementById("notFoundSpan").innerHTML = "Character not found!";
     }
-  });
+  }
   
 };
 

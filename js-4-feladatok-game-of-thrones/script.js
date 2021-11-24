@@ -4,7 +4,7 @@ function loadOntoSidebar(character, i) {
   character.getElementsByClassName("picture")[0].src = actors[i].picture;
   character.getElementsByTagName("h1")[0].innerHTML = actors[i].name;
   if (actors[i].house) {
-    character.getElementsByClassName("house")[0].src = "/assets/houses/" + actors[i].house + ".png";
+    character.getElementsByClassName("house")[0].src = "./assets/houses/" + actors[i].house + ".png";
   } else {
     character.getElementsByClassName("house")[0].src = "";
   }

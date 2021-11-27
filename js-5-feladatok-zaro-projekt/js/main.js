@@ -32,8 +32,9 @@ function fillDataTable(data, userTable){
             let td = createAnyElement("td");
             td.innerHTML = row[k];
             tr.appendChild(td);
-
         }
+        let buttonGroup = createBtnGroup();
+        tr.appendChild(buttonGroup);
         tBody.appendChild(tr);
     }
 }
@@ -44,4 +45,23 @@ function createAnyElement(name, attributes){
         element.setAttribute(k, attributes[k]);
     }
     return element;
+}
+
+function createBtnGroup(){
+    let group = createAnyElement("div", {class:"groupBtn"});
+    let info = createAnyElement("button", {class: "info", onlick:"getInfo(this)"});
+    info.innerHTML ='<i class="fa fa-refresh" aria-hidden="true"></i>';
+    let del = createAnyElement("button", {class: "delete", onclick:"delRow(this)"});
+    del.innerHTML ='<i class="fa fa-trash" aria-hidden="true"></i>';
+
+    group.appendChild(info);
+    group.appendChild(del);
+
+    let td = createAnyElement("td");
+    td. appendChild(group);
+    return td;
+}
+
+function delRow(el){
+    console.log(el);
 }

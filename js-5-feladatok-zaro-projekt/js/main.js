@@ -2,14 +2,14 @@
 
 let keys = ["id", "first_name", "last_name", "email", "street", "house"];
 
-function getServerData(url) {
+async function getServerData(url) {
   let fetchOptions = {
     method: "GET",
     mode: "cors",
     cache: "no-cache",
   };
 
-  return fetch(url, fetchOptions).then(
+  return await fetch(url, fetchOptions).then(
     (response) => response.json(),
     (err) => console.error(err)
   );
@@ -110,11 +110,11 @@ async function delRow(btn) {
 }
 function newUserRow(row) {
   let tr = createAnyElement("tr");
-  for (let k of keys) {
+  for (let key of keys) {
     let td = createAnyElement("td");
     let input = createAnyElement("input", {
       class: "form",
-      name: k,
+      name: key,
     });
     td.appendChild(input);
     tr.appendChild(td);
@@ -132,7 +132,7 @@ function newUserRow(row) {
   return tr;
 }
 
-function createUser(btn) {
+async function createUser(btn) {
   let tr = btn.parentElement.parentElement;
   let data = getRowData(tr);
   delete data.id;
@@ -145,7 +145,7 @@ function createUser(btn) {
     },
     body: JSON.stringify(data),
   };
-  fetch(`http://localhost:3000/users`, fetchOptions)
+  await fetch(`http://localhost:3000/users`, fetchOptions)
     .then(
       (resp) => resp.json(),
       (err) => console.error(err)

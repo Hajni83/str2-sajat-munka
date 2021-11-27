@@ -67,7 +67,7 @@ function createTableButtons() {
   let editButton = createAnyElement("button", {
     class: "edit",
     type: "button",
-    onclick: "editRow(this)",
+    onclick: "startEditingUser(this)",
   });
   editButton.innerHTML = '<i class="fa fa-pencil" aria-hidden="true"></i>';
   let deleteButton = createAnyElement("button", {
@@ -85,16 +85,20 @@ function createTableButtons() {
   return td;
 }
 
-// function switchButtons(){
-//   let switchBtn = createAnyElement("div", {class: "switch"});
-//   let info2 = createAnyElement("button", {
-//     class: "info2",
-//     type: "button",
-//     onclick:"editRow2(this)"
-//   });
-//   info2.innerHTML = '<i class="fa fa-floppy-o" aria-hidden="true"></i>';
+function startEditingUser(btn) {
+  let saveUserButton = createAnyElement("button", {
+    type: "button"
+  })
+  saveUserButton.innerHTML = 'save';
+  btn.parentElement.appendChild(saveUserButton);
 
-// }
+  let cancelEditingUserButton = createAnyElement("button", {
+    type: "button"
+  })
+  cancelEditingUserButton.innerHTML = 'cancel';
+  btn.parentElement.appendChild(cancelEditingUserButton);
+  btn.remove();
+}
 
 async function deleteUser(btn) {
   let tr = btn.parentElement.parentElement.parentElement;
@@ -150,7 +154,7 @@ function getRowData(element) {
   return data;
 }
 
-async function editRow(btn) {
+async function saveUser(btn) {
   let tr = btn.parentElement.parentElement.parentElement;
   let data = getRowData(tr);
 

@@ -1,6 +1,16 @@
 "use strict";
 
-let keys = ["id", "first_name", "last_name", "email", "street", "house"];
+const keys = ["id", "first_name", "last_name", "email", "street", "house"];
+
+window.onload = () => {
+  getUsers();
+}
+
+function getUsers() {
+  getServerData("http://localhost:3000/users").then((data) =>
+    fillUsersTable(data, "usersTable")
+  );
+}
 
 async function getServerData(url) {
   let fetchOptions = {
@@ -14,84 +24,84 @@ async function getServerData(url) {
     (err) => console.error(err)
   );
 }
-function startGetUsers() {
-  getServerData("http://localhost:3000/users").then((data) =>
-    fillDataTable(data, "userTable")
-  );
-}
-document
-  .querySelector("#getDataButton")
-  .addEventListener("click", startGetUsers);
 
-function fillDataTable(data, userTable) {
-  let table = document.querySelector(`#${userTable}`);
-  if (!table) {
-    console.error(`Table "${userTable}" is not found.`);
-    return;
-  }
+function fillUsersTable(data, usersTable) {
+  let table = document.querySelector(`#${usersTable}`);
 
   let tBody = table.querySelector("tbody");
   tBody.innerHTML = "";
-  let newRow = newUserRow();
-  tBody.appendChild(newRow);
 
   for (let row of data) {
     let tr = createAnyElement("tr");
-    for (let k of keys) {
+    for (let key of keys) {
       let td = createAnyElement("td");
       let input = createAnyElement("input", {
         class: "control",
-        value: row[k],
-        name: k,
+        value: row[key],
+        name: key,
       });
 
-      if (k == "id") {
+      if (key == "id") {
         input.setAttribute("readonly", true);
       }
       td.appendChild(input);
       tr.appendChild(td);
     }
 
-    let buttonGroup = createBtnGroup();
-    tr.appendChild(buttonGroup);
+    let tableButtons = createTableButtons();
+    tr.appendChild(tableButtons);
     tBody.appendChild(tr);
   }
 }
 
 function createAnyElement(name, attributes) {
   let element = document.createElement(name);
-  for (let k in attributes) {
-    element.setAttribute(k, attributes[k]);
+  for (let attribute in attributes) {
+    element.setAttribute(attribute, attributes[attribute]);
   }
   return element;
 }
 
-function createBtnGroup() {
-  let group = createAnyElement("div", { class: "groupBtn" });
-  let info = createAnyElement("button", {
-    class: "info",
+function createTableButtons() {
+  let buttonGroup = createAnyElement("div", { class: "groupBtn" });
+  let editButton = createAnyElement("button", {
+    class: "edit",
     type: "button",
-    onlick: "setRow(this)",
+    onclick: "editRow(this)",
   });
-  info.innerHTML = '<i class="fa fa-pencil" aria-hidden="true"></i>';
-  let del = createAnyElement("button", {
+  editButton.innerHTML = '<i class="fa fa-pencil" aria-hidden="true"></i>';
+  let deleteButton = createAnyElement("button", {
     class: "delete",
     type: "button",
-    onclick: "delRow(this)",
+    onclick: "deleteUser(this)",
   });
-  del.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
+  deleteButton.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
 
-  group.appendChild(info);
-  group.appendChild(del);
+  buttonGroup.appendChild(editButton);
+  buttonGroup.appendChild(deleteButton);
 
   let td = createAnyElement("td");
-  td.appendChild(group);
+  td.appendChild(buttonGroup);
   return td;
 }
 
-async function delRow(btn) {
+// function switchButtons(){
+//   let switchBtn = createAnyElement("div", {class: "switch"});
+//   let info2 = createAnyElement("button", {
+//     class: "info2",
+//     type: "button",
+//     onclick:"editRow2(this)"
+//   });
+//   info2.innerHTML = '<i class="fa fa-floppy-o" aria-hidden="true"></i>';
+
+// }
+
+async function deleteUser(btn) {
   let tr = btn.parentElement.parentElement.parentElement;
-  let id = tr.querySelector("td:first-child").getElementsByTagName("input")[0].value;
+  let id = tr
+    .querySelector("td:first-child")
+    .getElementsByTagName("input")[0].value;
+
   let fetchOptions = {
     method: "DELETE",
     mode: "cors",
@@ -104,38 +114,15 @@ async function delRow(btn) {
       (err) => console.error(err)
     )
     .then((data) => {
-      startGetUsers();
+      getUsers();
     });
-    
-}
-function newUserRow(row) {
-  let tr = createAnyElement("tr");
-  for (let key of keys) {
-    let td = createAnyElement("td");
-    let input = createAnyElement("input", {
-      class: "form",
-      name: key,
-    });
-    td.appendChild(input);
-    tr.appendChild(td);
-  }
-  let newBtn = createAnyElement("button", {
-    class: "success",
-    type: "button",
-    onclick: "createUser(this)",
-  });
-  newBtn.innerHTML = `<i class="fa fa-plus-circle" aria-hidden="true"></i>`;
-  let td = createAnyElement("td");
-  td.appendChild(newBtn);
-  tr.appendChild(td);
-
-  return tr;
 }
 
 async function createUser(btn) {
-  let tr = btn.parentElement.parentElement;
-  let data = getRowData(tr);
+  let form = document.getElementById("form");
+  let data = getRowData(form);
   delete data.id;
+
   let fetchOptions = {
     method: "POST",
     mode: "cors",
@@ -145,16 +132,17 @@ async function createUser(btn) {
     },
     body: JSON.stringify(data),
   };
+
   await fetch(`http://localhost:3000/users`, fetchOptions)
     .then(
       (resp) => resp.json(),
       (err) => console.error(err)
     )
-    .then((data) => startGetUsers());
+    .then((data) => getUsers());
 }
 
-function getRowData(tr) {
-  let inputs = tr.querySelectorAll("input");
+function getRowData(element) {
+  let inputs = element.querySelectorAll("input");
   let data = {};
   for (let i = 0; i < inputs.length; i++) {
     data[inputs[i].name] = inputs[i].value;
@@ -162,7 +150,7 @@ function getRowData(tr) {
   return data;
 }
 
-function setRow(btn) {
+async function editRow(btn) {
   let tr = btn.parentElement.parentElement.parentElement;
   let data = getRowData(tr);
 
@@ -176,10 +164,10 @@ function setRow(btn) {
     body: JSON.stringify(data),
   };
 
-  fetchOptions(`http://localhost:3000/users/${data.id}`, fetchOptions)
+  await fetch(`http://localhost:3000/users/${data.id}`, fetchOptions)
     .then(
       (resp) => resp.json(),
       (err) => console.error(err)
     )
-    .then((data) => startGetUsers());
+    .then((data) => getUsers());
 }

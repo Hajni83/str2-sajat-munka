@@ -8,8 +8,22 @@
     <link rel="stylesheet" href="./node_modules/font-awesome/css/font-awesome.min.css">
     <title>Document</title>
 </head>
-<body>    
-    <table id="userTable">
+<body> 
+    <form id="form">
+        <label for="first_name">Firstname</label>
+        <input id="first_name" name="first_name">
+        <label for="last_name">Lastname</label>
+        <input id="last_name" name="last_name">
+        <label for="Email">Email</label>
+        <input id="email" name="email">
+        <label for="street">Street</label>
+        <input id="street" name="street">
+        <label for="house">Number of house</label>
+        <input id="house" name="house">
+        <button onclick="createUser()"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+    </form>   
+    
+    <table id="usersTable">
         <thead>
             <tr>
                 <th>ID</th>
@@ -18,7 +32,6 @@
                 <th>Email</th>
                 <th>Street</th>
                 <th>Number of house</th>
-                <button type="button" id="getDataButton">Get Users</button>
             </tr>
         </thead>
         <tbody>

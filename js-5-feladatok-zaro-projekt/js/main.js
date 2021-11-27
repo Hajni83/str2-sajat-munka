@@ -12,12 +12,13 @@ function getServerData(url) {
         err=> console.error(err)
     );
 }
-
-document.querySelector("#getDataButton").addEventListener("click", function(){
+function startGetUsers(){
     getServerData("http://localhost:3000/users").then(
         data => fillDataTable(data, "userTable")
-    );
-});
+    )
+};
+document.querySelector("#getDataButton").addEventListener("click", startGetUsers);
+
 
 function fillDataTable(data, userTable){
     let table = document.querySelector(`#${userTable}`);
@@ -62,6 +63,21 @@ function createBtnGroup(){
     return td;
 }
 
-function delRow(el){
-    console.log(el);
+function delRow(btn){
+    let tr = btn.parentElement.parentElement.parentElement;
+    let id = tr.querySelector("td:first-child").innerHTML;
+    let fetchOptions= {
+        method:"DELETE",
+        mode:"cors",
+        cache:"no-cache"
+    };
+
+    fetch(`http://localhost:3000/users/${id}`, fetchOptions).then(
+        resp => resp.json(),
+        err => console.error(err)
+    ).then (
+        data => {
+            startGetUsers();
+        }
+    )
 }

@@ -1,5 +1,5 @@
 {
     "liveServer.settings.ignoreFiles":[
-        "node_modules/**",
-        "users/**"
-    ]}
+        "node_modules/**"
+    ]
+}

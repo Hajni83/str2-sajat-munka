@@ -1,0 +1,16 @@
+{
+  "name": "js-5-feladatok-zaro-projekt",
+  "version": "1.0.0",
+  "main": "app.js",
+  "dependencies": {
+    "json-server": "^0.17.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

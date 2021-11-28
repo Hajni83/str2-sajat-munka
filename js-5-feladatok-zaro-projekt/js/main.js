@@ -7,11 +7,6 @@ window.onload = () => {
 }
 let getUsers = () => getServerData("http://localhost:3000/users").then((data) =>
 fillUsersTable(data, "usersTable"));
-// function getUsers() {
-//   getServerData("http://localhost:3000/users").then((data) =>
-//     fillUsersTable(data, "usersTable")
-//   );
-// }
 
 async function getServerData(url) {
   let fetchOptions = {
@@ -49,41 +44,13 @@ let fillUsersTable = (data, usersTable) => {
       tr.appendChild(td);
     }
 
-    let tableButtons = createTableButtons();
-    tr.appendChild(tableButtons);
+    let buttonGroup = createTableButtons();
+    let td = createAnyElement("td");
+    td.appendChild(buttonGroup);
+    tr.appendChild(td);
     tBody.appendChild(tr);
   }
 }
-
-
-// function fillUsersTable(data, usersTable) {
-//   let table = document.querySelector(`#${usersTable}`);
-
-//   let tBody = table.querySelector("tbody");
-//   tBody.innerHTML = "";
-
-//   for (let row of data) {
-//     let tr = createAnyElement("tr");
-//     for (let key of keys) {
-//       let td = createAnyElement("td");
-//       let input = createAnyElement("input", {
-//         class: "control",
-//         value: row[key],
-//         name: key,
-//       });
-
-//       if (key == "id") {
-//         input.setAttribute("readonly", true);
-//       }
-//       td.appendChild(input);
-//       tr.appendChild(td);
-//     }
-
-//     let tableButtons = createTableButtons();
-//     tr.appendChild(tableButtons);
-//     tBody.appendChild(tr);
-//   }
-// }
 
 let createAnyElement = (name, attributes) => {
   let element = document.createElement(name);
@@ -92,13 +59,6 @@ let createAnyElement = (name, attributes) => {
   }
   return element;
 }
-// function createAnyElement(name, attributes) {
-//   let element = document.createElement(name);
-//   for (let attribute in attributes) {
-//     element.setAttribute(attribute, attributes[attribute]);
-//   }
-//   return element;
-// }
 
 let createTableButtons = () => {
   let buttonGroup = createAnyElement("div", { class: "groupBtn" });
@@ -118,63 +78,36 @@ let createTableButtons = () => {
   buttonGroup.appendChild(editButton);
   buttonGroup.appendChild(deleteButton);
 
-  let td = createAnyElement("td");
-  td.appendChild(buttonGroup);
-  return td;
+  return buttonGroup;
 }
-// function createTableButtons() {
-//   let buttonGroup = createAnyElement("div", { class: "groupBtn" });
-//   let editButton = createAnyElement("button", {
-//     class: "edit",
-//     type: "button",
-//     onclick: "startEditingUser(this)",
-//   });
-//   editButton.innerHTML = '<i class="fa fa-pencil" aria-hidden="true"></i>';
-//   let deleteButton = createAnyElement("button", {
-//     class: "delete",
-//     type: "button",
-//     onclick: "deleteUser(this)",
-//   });
-//   deleteButton.innerHTML = '<i class="fa fa-trash" aria-hidden="true"></i>';
-
-//   buttonGroup.appendChild(editButton);
-//   buttonGroup.appendChild(deleteButton);
-
-//   let td = createAnyElement("td");
-//   td.appendChild(buttonGroup);
-//   return td;
-// }
-
 
 let startEditingUser = (btn) => {
   let saveUserButton = createAnyElement("button", {
-    type: "button"
+    class: "save",
+    type: "button",
+    onclick: "saveUser(this)",
   })
   saveUserButton.innerHTML = 'save';
   btn.parentElement.appendChild(saveUserButton);
 
   let cancelEditingUserButton = createAnyElement("button", {
-    type: "button"
+    type: "button",
+    class: "cancel",
+    onclick:"cancelEditingUser(this)"
   })
+  
   cancelEditingUserButton.innerHTML = 'cancel';
   btn.parentElement.appendChild(cancelEditingUserButton);
   btn.remove();
 }
-// function startEditingUser(btn) {
-//   let saveUserButton = createAnyElement("button", {
-//     type: "button"
-//   })
-//   saveUserButton.innerHTML = 'save';
-//   btn.parentElement.appendChild(saveUserButton);
 
-//   let cancelEditingUserButton = createAnyElement("button", {
-//     type: "button"
-//   })
-//   cancelEditingUserButton.innerHTML = 'cancel';
-//   btn.parentElement.appendChild(cancelEditingUserButton);
-//   btn.remove();
-// }
+let cancelEditingUser = (btn) => {
+  let td = btn.parentElement.parentElement; // a td referenciáját elmentem későbbi használat céljából
+  btn.parentElement.remove(); // a td tartalmát kiürítem
 
+  let buttonGroup = createTableButtons(); // létrehozom a td leendő, új tartalmát, a gombokat(edit és delete)
+  td.appendChild(buttonGroup); // a td-be berakom az új tartalmat
+}
 
 let deleteUser = async (btn) => {
   let tr = btn.parentElement.parentElement.parentElement;
@@ -197,28 +130,6 @@ let deleteUser = async (btn) => {
       getUsers();
     });
 }
-
-// async function deleteUser(btn) {
-//   let tr = btn.parentElement.parentElement.parentElement;
-//   let id = tr
-//     .querySelector("td:first-child")
-//     .getElementsByTagName("input")[0].value;
-
-//   let fetchOptions = {
-//     method: "DELETE",
-//     mode: "cors",
-//     cache: "no-cache",
-//   };
-
-//   await fetch(`http://localhost:3000/users/${id}`, fetchOptions)
-//     .then(
-//       (resp) => resp.json(),
-//       (err) => console.error(err)
-//     )
-//     .then((data) => {
-//       getUsers();
-//     });
-// }
 
 let createUser = async(btn) => {
   let form = document.getElementById("form");
@@ -243,29 +154,6 @@ let createUser = async(btn) => {
     .then((data) => getUsers());
 }
 
-// async function createUser(btn) {
-//   let form = document.getElementById("form");
-//   let data = getRowData(form);
-//   delete data.id;
-
-//   let fetchOptions = {
-//     method: "POST",
-//     mode: "cors",
-//     cache: "no-cache",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify(data),
-//   };
-
-//   await fetch(`http://localhost:3000/users`, fetchOptions)
-//     .then(
-//       (resp) => resp.json(),
-//       (err) => console.error(err)
-//     )
-//     .then((data) => getUsers());
-// }
-
 let getRowData = element => {
   let inputs = element.querySelectorAll("input");
   let data = {};
@@ -274,15 +162,6 @@ let getRowData = element => {
   }
   return data;
 }
-
-// function getRowData(element) {
-//   let inputs = element.querySelectorAll("input");
-//   let data = {};
-//   for (let i = 0; i < inputs.length; i++) {
-//     data[inputs[i].name] = inputs[i].value;
-//   }
-//   return data;
-// }
 
 let saveUser = async(btn) => {
   let tr = btn.parentElement.parentElement.parentElement;
@@ -305,26 +184,3 @@ let saveUser = async(btn) => {
     )
     .then((data) => getUsers());
 }
-
-
-// async function saveUser(btn) {
-//   let tr = btn.parentElement.parentElement.parentElement;
-//   let data = getRowData(tr);
-
-//   let fetchOptions = {
-//     method: "PUT",
-//     mode: "cors",
-//     cache: "no-cache",
-//     headers: {
-//       "content-Type": "application/json",
-//     },
-//     body: JSON.stringify(data),
-//   };
-
-//   await fetch(`http://localhost:3000/users/${data.id}`, fetchOptions)
-//     .then(
-//       (resp) => resp.json(),
-//       (err) => console.error(err)
-//     )
-//     .then((data) => getUsers());
-// }

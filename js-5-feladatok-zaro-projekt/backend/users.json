@@ -12,9 +12,9 @@
       "id": 81,
       "first_name": "Yanaton",
       "last_name": "Gasticke",
-      "email": "ygasticke28@cam.ac.uk",
+      "email": "ygastick@asd.hu",
       "street": "Gateway",
-      "house": "81365"
+      "house": "81"
     },
     {
       "id": 82,
@@ -196,6 +196,22 @@
       "street": "nn",
       "house": "mm",
       "id": 109
+    },
+    {
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "street": "",
+      "house": "",
+      "id": 110
+    },
+    {
+      "first_name": "Hajnalka",
+      "last_name": "Maró",
+      "email": "maro.hajnalka@gmail.com",
+      "street": "ewre",
+      "house": "3",
+      "id": 111
     }
   ]
 }

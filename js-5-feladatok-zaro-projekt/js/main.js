@@ -155,9 +155,43 @@ let createUser = async(btn) => {
 }
 
 let getRowData = element => {
+
+  let regexpTest = (regExp, inputValue) => {
+    if (regExp.test(inputValue)) {
+      console.log("ok");
+    } else {
+      console.log("not ok");
+    }
+  }
+
   let inputs = element.querySelectorAll("input");
   let data = {};
+  let regExp;
+
   for (let i = 0; i < inputs.length; i++) {
+    switch(inputs[i].name) {
+    case "first_name":
+      regExp = /^[a-zA-Z]{0,10}$/;
+      regexpTest(regExp, inputs[i].value);
+      break;
+    case "last_name":
+      regExp = /^[a-zA-Z]{0,10}$/;
+      regexpTest(regExp, inputs[i].value);
+      break;
+    case "email":
+      regExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      regexpTest(regExp, inputs[i].value);
+      break;
+    case "street":
+      regExp = /^[a-zA-Z]{0,10}$/;
+      regexpTest(regExp, inputs[i].value);
+      break;
+    case "house":
+      regExp = /^[0-9]{0,8}$/;
+      regexpTest(regExp, inputs[i].value);
+      break;
+    }
+
     data[inputs[i].name] = inputs[i].value;
   }
   return data;
@@ -165,6 +199,8 @@ let getRowData = element => {
 
 let saveUser = async(btn) => {
   let tr = btn.parentElement.parentElement.parentElement;
+
+  //az adott sorból kinyeri az inputok értékeit és js objektumba pakolja
   let data = getRowData(tr);
 
   let fetchOptions = {
@@ -177,6 +213,7 @@ let saveUser = async(btn) => {
     body: JSON.stringify(data),
   };
 
+  //menti a usert a json-be
   await fetch(`http://localhost:3000/users/${data.id}`, fetchOptions)
     .then(
       (resp) => resp.json(),

@@ -154,44 +154,56 @@ let createUser = async(btn) => {
     .then((data) => getUsers());
 }
 
-let getRowData = element => {
+function validateForm(element) {
+  let inputs = element.querySelectorAll("input");
 
   let regexpTest = (regExp, inputValue) => {
     if (regExp.test(inputValue)) {
-      console.log("ok");
+      return true;
     } else {
-      console.log("not ok");
+      let spanElement = createAnyElement("span", {class: "redColor"});
+      spanElement.innerHTML = "Validációs hiba!";
+      let body = document.getElementsByTagName("body")[0];
+      body.insertBefore(spanElement, body.firstChild);
+      setTimeout(()=>spanElement.remove(), 5000);
+      return false;
     }
   }
 
-  let inputs = element.querySelectorAll("input");
-  let data = {};
   let regExp;
-
+  let first_name, last_name, email, street, house; 
   for (let i = 0; i < inputs.length; i++) {
     switch(inputs[i].name) {
-    case "first_name":
-      regExp = /^[a-zA-Z]{0,10}$/;
-      regexpTest(regExp, inputs[i].value);
-      break;
-    case "last_name":
-      regExp = /^[a-zA-Z]{0,10}$/;
-      regexpTest(regExp, inputs[i].value);
-      break;
-    case "email":
-      regExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-      regexpTest(regExp, inputs[i].value);
-      break;
-    case "street":
-      regExp = /^[a-zA-Z]{0,10}$/;
-      regexpTest(regExp, inputs[i].value);
-      break;
-    case "house":
-      regExp = /^[0-9]{0,8}$/;
-      regexpTest(regExp, inputs[i].value);
-      break;
-    }
+      case "first_name":
+        regExp = /^[a-zA-Z]{0,10}$/;
+        first_name = regexpTest(regExp, inputs[i].value);
+        break;
+      case "last_name":
+        regExp = /^[a-zA-Z]{0,10}$/;
+        last_name = regexpTest(regExp, inputs[i].value);
+        break;
+      case "email":
+        regExp = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        email =  regexpTest(regExp, inputs[i].value);
+        break;
+      case "street":
+        regExp = /^[a-zA-Z]{0,10}$/;
+        street = regexpTest(regExp, inputs[i].value);
+        break;
+      case "house":
+        regExp = /^[0-9]{0,8}$/;
+        house = regexpTest(regExp, inputs[i].value);
+        break;
+      }
+  }
+  return first_name && last_name && email && street && house;
+}
 
+let getRowData = element => {
+  let inputs = element.querySelectorAll("input");
+  let data = {};
+
+  for (let i = 0; i < inputs.length; i++) {
     data[inputs[i].name] = inputs[i].value;
   }
   return data;
@@ -199,6 +211,8 @@ let getRowData = element => {
 
 let saveUser = async(btn) => {
   let tr = btn.parentElement.parentElement.parentElement;
+
+  if (!validateForm(tr)) return;
 
   //az adott sorból kinyeri az inputok értékeit és js objektumba pakolja
   let data = getRowData(tr);

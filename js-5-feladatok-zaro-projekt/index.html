@@ -9,7 +9,7 @@
     <title>Document</title>
 </head>
 <body> 
-    <form id="form" onsubmit="return validateForm(this);">
+    <div id="form">
         <label for="first_name">Firstname</label>
         <input id="first_name" name="first_name">
         <label for="last_name">Lastname</label>
@@ -20,8 +20,8 @@
         <input id="street" name="street">
         <label for="house">Number of house</label>
         <input id="house" name="house">
-        <button onclick="createUser()"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
-    </form>   
+        <button id="createUserButton"><i class="fa fa-plus-circle" aria-hidden="true"></i></button>
+    </div>   
 
     <table id="usersTable">
         <thead>
@@ -38,6 +38,6 @@
         </tbody>
     </table>
    
-    <script src="./js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>

@@ -1,3 +1,11 @@
 .redColor {
     color: red;
 }
+
+.greenColor {
+    color: green;
+}
+
+.borderColorRed {
+    border-color: red;
+}

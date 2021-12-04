@@ -12,85 +12,76 @@
   </head>
   <body class="bg-light">
 
-    <main>
-        <section class="pt-5">
-            <div class="container">
-                <div class="col-sm-12">
-                    <div class="d-flex">
-                        <span class="h4 col-11 text-muted">Your cart</span>
-                        <span class="justify-content-end rounded-circle h4 py-1 px-3 bg-secondary text-white">3</span>
-                    </div>
+    <main class="d-md-flex flex-md-row-reverse pr-2">
+        <section class=" p-2 pt-5">
+            <div class="col-sm-12">
+                <div class="d-flex">
+                    <span class="h4 col-11 text-muted">Your cart</span>
+                    <span class="justify-content-end rounded-circle h4 py-1 px-3 bg-secondary text-white">3</span>
+                 </div>
                     
-                    <div class="d-flex justify-content-center">
-                        </div>
-                    <div class="card">
-                        
-                        <ul class="list-group list-group-flush">
-                          <li class="list-group-item">
-                              <div class="d-flex">
-                                  <span class="pl-2 col-6 justify-content-start"><strong>Product name</strong></span>
-                                  <span class="pl-2 col-6 text-right text-muted">$ 12</span>
-                              </div>
-                                  <span class="pl-2 d-block text-muted">Brief description</span>   
-                              </div>
-                          </li>
-                          <li class="list-group-item">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="d-flex">
+                                <span class="pl-2 col-6 justify-content-start"><strong>Product name</strong></span>
+                                <span class="pl-2 col-6 text-right text-muted">$ 12</span>
+                            </div>
+                                 <span class="pl-2 d-block text-muted">Brief description</span>   
+                            </div>
+                        </li>
+                        <li class="list-group-item">
                             <div class="d-flex">
                                 <span class="pl-2 col-6 justify-content-start"><strong>Second product</strong></span>
                                 <span class="pl-2 col-6 text-right text-muted">$ 8</span>
-                                </div>
+                            </div>
                                 <span class="pl-2 d-block text-muted">Brief description</span>   
-                          </li>
-                          <li class="list-group-item">
-                                <div class="d-flex">
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-flex">
                                 <span class="pl-2 col-6 justify-content-start"><strong>Third item</strong></span>
                                 <span class="pl-2 col-6 text-right text-muted">$ 5</span>
-                                </div>
+                            </div>
                                 <span class="pl-2 d-block text-muted">Brief description</span>   
-                          </li>
-                          <li class="list-group-item bg-light">
+                        </li>
+                        <li class="list-group-item bg-light">
                             <div class="d-flex">
                                 <span class="pl-2 col-6 justify-content-start text-success"><strong>Promo code</strong></span>
                                 <span class="pl-2 col-6 text-right text-success">-$ 5</span>
                             </div>
                                 <span class="pl-2 d-block text-success">EXAMPLECODE</span>   
-                          </li>
-                          <li class="list-group-item">
+                        </li>
+                        <li class="list-group-item">
                             <div class="d-flex">
                                 <span class="pl-2 col-6 justify-content-start">Total(USD)</span>
                                 <span class="pl-2 col-6 text-right text-muted"><strong>$ 20</strong></span>
                             </div>
-                          </li>
-                        </ul>
-                      </div>  
-                </div>
+                        </li>
+                    </ul>
+                </div>  
             </div>
+            
+            <div class="pt-4">
+                    <form class="border text-muted rounded p-2 bg-white">
+                            <div class="container">
+                                <form class="col-sm-12">
+                                    <div class="form-row">
+                                        <div class="col-10 pr-0">
+                                            <input type="text" class="form-control pr-0 rounded-0" placeholder="Promo code">
+                                        </div>
+                                    <div class="col-2 pl-0">
+                                        <button type="submit" class="btn btn-primary rounded-0 border-secondary bg-secondary">Redeem</button>
+                                    </div>
+                                    </div>
+                            </div>
+                </div>  
+                    </form>
+           
+       
         </section>
 
-        <div class="container pt-4">
-            <div class="col-sm-12">
-                <form class="border text-muted rounded p-2 bg-white">
-                    <section>
-                        <div class="container">
-                            <form class="col-sm-12">
-                                <div class="form-row">
-                                    <div class="col-10 pr-0">
-                                         <input type="text" class="form-control pr-0 rounded-0" placeholder="Promo code">
-                                    </div>
-                                <div class="col-2 pl-0">
-                                    <button type="submit" class="btn btn-primary rounded-0 border-secondary bg-secondary">Redeem</button>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                 </form>
-            </div>
-        </div>
-
-        <section class="pt-5">
-            <div class="container">
-                <div class="col-sm-12">
+        <section class="p-2 pt-5 col-md-6">
+                
                     <div class="d-flex">
                         <span class="h4 col-11">Billing address</span>
                     </div>
@@ -190,12 +181,7 @@
                     <form class="pt-5">
                         <button type="button" class="btn btn-primary btn-lg btn-block">Continue to checkout</button>
                     </form>
-                </div>
-            </div>
         </section>
-
-    
-
     </main>
    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

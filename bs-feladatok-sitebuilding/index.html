@@ -14,6 +14,7 @@
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap"
       rel="stylesheet"
@@ -21,43 +22,119 @@
     <title>sitebuilding</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap");
-      .nav-link {
+      .nav-link. {
+        font-family: "Catamaran", sans-serif;
+      }
+
+      .navbar-brand {
         font-family: "Catamaran", sans-serif;
       }
     </style>
   </head>
-  <body>
-    <nav
-      class="navbar navbar-expand-lg navbar-light"
-      style="background-color: #ffffff"
-    >
-      <a class="navbar-brand text-warning" href="#">Start Bootstrap</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        Menu <span class="navbar-toggler-icon"></span>
-      </button>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto pr-5 mr-5">
-          <li class="nav-item">
-            <a class="nav-link text-uppercase" href="#">Download</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-uppercase" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-uppercase" href="#">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+  <body>
+    <header>
+      <nav
+        class="navbar navbar-expand-lg navbar-light"
+        style="background-color: #ffffff"
+      >
+        <a class="navbar-brand text-warning" href="#">Start Bootstrap</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ml-auto pr-5 mr-5">
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" href="#">Download</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-uppercase" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="container-fluid text-center">
+          <div class="row">
+            <div class="col-sm-12 col-lg-6">
+              <p class="lead">
+                New Age is an app landing page that<br />
+                will help you beautifully showcase<br />
+                your new mobile app, or anything else!
+              </p>
+
+              <button
+                type="button"
+                class="btn btn-lg border border-green border-10 text-uppercase"
+                style="background-color: #ffffff"
+              >
+                Start now for free!
+              </button>
+            </div>
+            <div class="col-lg-6">
+              <div class="">
+                <div class="col-sm-3"></div>
+                <img class="img-fluid col-sm-6 position-absolute" src="./img/phone.png" alt="phone"/>
+                <img class="img-fluid col-sm-6 position-relative" src="./img/demo-screen-1.jpg" alt="book">
+                <div class="col-sm-3"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+          <div class="container text-center">
+              <h4>Discover what all the buzz is about!</h4>
+              <p>Our app is available on any mobile device! Download now to get started!</p>
+              <div class="row">
+                <div class="col-sm-12 col-lg-6">
+                    <img src="./img/google-play-badge.svg" alt="googleplay">
+                </div>
+                <div class="col-sm-12 col-lg-6">
+                    <img src="./img/app-store-badge.svg" alt="store">
+                    </div
+              </div>
+          </div>
+      </section>
+
+      <section>
+          <div class="container">
+              <h4>Unlimited Features, Unlimited Fun</h4>
+              <p>Check out what you can do with this app theme!</p>
+              <div class="row">
+                  <div class="col-sm-12 col-lg-4">
+                    <img class="img-fluid col-sm-6 position-absolute" src="./img/phone.png" alt="phone"/>
+                    <img class="img-fluid col-sm-6 position-relative" src="./img/demo-screen-1.jpg" alt="book">
+                  </div>
+                  <div class="col-8">
+                      <div class="row">
+                          <div class="col-6"><i class="icon-user-female"></i></div>
+                          <div class="col-6">dddddddddddddd</div>
+                          <div class="col-6">ssssssssssssssss</div>
+                          <div class="col-6">aaaaaaaaaaaaaaaaaaa</div>
+                      </div>
+                  </div>
+
+              </div>
+          </div>
+      </section>
+    </main>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

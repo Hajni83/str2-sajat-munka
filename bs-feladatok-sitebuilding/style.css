@@ -1,0 +1,30 @@
+body {
+    background: url("./img/bg-pattern.png"), linear-gradient(90deg, #da2431, #7a4397);
+}
+
+@media screen and (max-width:992px){
+    .menu{
+    background-color:white;
+    }
+}
+
+.btnHover{
+    border-radius:30px;
+    border-color: white;
+    background: url("./img/bg-pattern.png");
+    transition: border-color, background-color;
+   
+
+}
+.btnHover:hover {
+background-color: #fdcc52;
+border-color:#fdcc52;
+background-color: 0.3s;
+border-color:0.3s;
+}
+
+.position-relative {
+    width: 49%;
+    padding-left: 41px;
+    padding-top: 89px;
+}

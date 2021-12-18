@@ -21,6 +21,7 @@
       rel="stylesheet"
     />
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <link rel="stylesheet" href="style.css">
     <title>sitebuilding</title>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap");
@@ -34,94 +35,52 @@
     </style>
   </head>
 
-  <body class="container">
-
-  <div class="row">
-    <div class="col-5"><a class="navbar-brand text-warning col" href="#">Start Bootstrap</a></div>
-    <div class="col-7 d-flex justify-content-sm-around"><nav
-      class="navbar-expand-lg navbar-light"
-      style="background-color: #ffffff"
-    >
-      <div class=""></div>
-     <div class="<nav
-     class=" navbar-expand-lg navbar-light "
-     style="background-color: #ffffff"
-   >
-     <div class="p-2 bd-highlight"></div>
-    <div class="p-2 bd-highlight"> <button
-       class="navbar-toggler"
-       type="button"
-       data-toggle="collapse"
-       data-target="#navbarSupportedContent"
-       aria-controls="navbarSupportedContent"
-       aria-expanded="false"
-       aria-label="Toggle navigation"
-     >
-       Menu <span class="navbar-toggler-icon"></span>
-     </button>
-   </div>
-
-     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-       <ul class="navbar-nav ml-auto pr-5 mr-5">
-         <li class="nav-item">
-           <a class="nav-link text-uppercase" href="#">Download</a>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link text-uppercase" href="#">Features</a>
-         </li>
-         <li class="nav-item">
-           <a class="nav-link text-uppercase" href="#">Contact</a>
-         </li>
-       </ul>
-     </div>
-   </nav> 
-    </div>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto pr-5 mr-5">
-          <li class="nav-item">
-            <a class="nav-link text-uppercase" href="#">Download</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-uppercase" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-uppercase" href="#">Contact</a>
-          </li>
-        </ul>
+  <body class="">
+    <nav class="menu navbar navbar-expand-lg navbar-light sticky-top py-2 px-5 px-lg-0">
+      <div class="col-12 col-lg-8 offset-lg-2 navbar navbar-expand-lg navbar-light py-0 px-5">
+          <a class="navbar-brand" href="#body"><span class="text-warning">Start Bootstrap</span></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              Menu<span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+              <div class="navbar-nav">
+              
+                  <a class="nav-item nav-link text-uppercase text-white text-right"
+                      href="#download">Download</a>
+                  <a class="nav-item nav-link text-uppercase text-white text-right"
+                      href="#features">Features </a>
+                  <a class="nav-item nav-link text-uppercase text-white text-right" href="#contact">Contact </a>
+              
+              </div>
+          </div>
       </div>
-    </nav></div>
-
-
-    <main>
-      <section>
-        <div class="bg container-fluid text-center">
+  </nav>
+  
+    
+     <main>
+      <section class="text-center">
           <div class="row">
-            <div class="col-sm-12 col-lg-6">
-              <p class="lead">
+            <div class="col-sm-12 col-lg-6 position-relative mt-5">
+              <p class="h3 pt-5 text-white">
                 New Age is an app landing page that<br />
                 will help you beautifully showcase<br />
                 your new mobile app, or anything else!
               </p>
-
+              <div class="pt-4">
               <button
                 type="button"
-                class="btn btn-lg border border-green border-10 text-uppercase"
-                style="background-color: #ffffff"
-              >
+                class="btn text-uppercase text-white btnHover">
                 Start now for free!
               </button>
             </div>
-            <div class="col-lg-6">
-              <div class="">
-                <div class="col-sm-3"></div>
+            </div>
+            <div class="col-lg-6 pt-5">
                 <img class="img-fluid col-sm-6 position-absolute" src="./img/phone.png" alt="phone"/>
                 <img class="img-fluid col-sm-6 position-relative" src="./img/demo-screen-1.jpg" alt="book">
-                <div class="col-sm-3"></div>
-              </div>
             </div>
           </div>
-        </div>
+     
       </section>
 
       <section>
@@ -139,7 +98,7 @@
           </div>
       </section>
 
-      <section>
+      <!--<section>
           <div class="container">
               <h4>Unlimited Features, Unlimited Fun</h4>
               <p>Check out what you can do with this app theme!</p>
@@ -219,7 +178,7 @@
           </div>
         </div>
       </footer>
-    </main>
+    </main> -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"

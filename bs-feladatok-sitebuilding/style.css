@@ -1,17 +1,17 @@
-body {
+.background {
     background: url("./img/bg-pattern.png"), linear-gradient(90deg, #da2431, #7a4397);
 }
 
-@media screen and (max-width:992px){
+
     .menu{
     background-color:white;
     }
-}
+
 
 .btnHover{
     border-radius:30px;
     border-color: white;
-    background: url("./img/bg-pattern.png");
+    background-color: transparent;
     transition: border-color, background-color;
    
 
@@ -44,3 +44,26 @@ border-color:0.3s;
     margin:0 auto;
     color:#a83463;
 }
+
+.phone {
+    background: url(./img/bg-cta.jpg);
+    box-shadow:inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    background-size: cover; 
+}
+
+.btnHover2 {
+    border-radius:30px;
+    border-color: white;
+    color:white;
+    background-color: transparent;
+    transition: border-color, background-color;
+   
+}
+
+.btnHover2:hover {
+    background-color: #fdcc52;
+    border-color:#fdcc52;
+    background-color: 0.3s;
+    border-color:0.3s;
+    }

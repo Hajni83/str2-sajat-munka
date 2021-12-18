@@ -23,8 +23,15 @@ background-color: 0.3s;
 border-color:0.3s;
 }
 
-.position-relative {
-    width: 49%;
-    padding-left: 41px;
-    padding-top: 89px;
+
+.positionA{
+    position: absolute;
+    width: 80%;
+}
+.positionR {
+    position: relative;
+}
+
+.googleLink {
+    width:18rem;
 }

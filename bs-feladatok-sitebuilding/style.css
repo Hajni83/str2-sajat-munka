@@ -70,6 +70,27 @@ border-color:0.3s;
 
     .twitter {
         background-color: #1da1f3;
-        width:5rem;
-        height:5rem;
+    }
+
+    .fa-twitter {
+   left: 9px;
+    position: relative;
+    }
+
+    .facebook {
+        background-color: #3b5999;
+    }
+    .fa-facebook{
+        padding:10px;
+        left: 5px;
+    position: relative;
+    }
+
+    .google{
+        background-color: #dd4c39;
+    }
+
+    .fa-google{
+        padding:10px;
+    position: relative;
     }

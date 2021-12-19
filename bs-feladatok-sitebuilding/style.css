@@ -94,3 +94,14 @@ border-color:0.3s;
         padding:10px;
     position: relative;
     }
+
+
+    .footer {
+        text-decoration: none;
+        color:grey;
+    }
+
+    .footer:hover {
+        text-decoration: none;
+        color: #fdcc52;
+    }

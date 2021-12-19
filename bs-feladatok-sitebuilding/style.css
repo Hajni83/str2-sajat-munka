@@ -1,3 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+
+
+.muliText {
+    font-family: 'Mulish', sans-serif;;
+}
+
+.latoText {
+    font-family: 'Lato', sans-serif; 
+}
+
+.catamaranText {
+    font-family: "Catamaran", sans-serif;
+}
+
 .background {
     background: url("./img/bg-pattern.png"), linear-gradient(90deg, #da2431, #7a4397);
 }
@@ -105,3 +122,5 @@ border-color:0.3s;
         text-decoration: none;
         color: #fdcc52;
     }
+
+    

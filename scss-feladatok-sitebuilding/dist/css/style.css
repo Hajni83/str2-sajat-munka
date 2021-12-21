@@ -1,0 +1,145 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Catamaran";
+  src: url("../../fonts/Catamaran/catamaran-v8-latin-regular.eot?") format("eot"), url("../../fonts/Catamaran/catamaran-v8-latin-regular.woff2") format("woff2"), url("../../fonts/Catamaran/catamaran-v8-latin-regular.woff") format("woff"), url("../../fonts/Catamaran/catamaran-v8-latin-regular.ttf") format("truetype"), url("../../fonts/Catamaran/catamaran-v8-latin-regular.svg#Catamaran") format("svg");
+}
+.catamaran {
+  font-family: Catamaran, Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "Lato";
+  src: url("../../fonts/Lato/lato-v20-latin-regular.eot?") format("eot"), url("../../fonts/Lato/lato-v20-latin-regular.woff2") format("woff2"), url("../../fonts/Lato/lato-v20-latin-regular.woff") format("woff"), url("../../fonts/Lato/lato-v20-latin-regular.ttf") format("truetype"), url("../../fonts/Lato/lato-v20-latin-regular.svg#Lato") format("svg");
+}
+.lato {
+  font-family: Lato, Helvetica, Arial, sans-serif;
+}
+
+@font-face {
+  font-family: "Mulish";
+  src: url("../../fonts/Muli/mulish-v7-latin-regular.eot?") format("eot"), url("../../fonts/Muli/mulish-v7-latin-regular.woff2") format("woff2"), url("../../fonts/Muli/mulish-v7-latin-regular.woff") format("woff"), url("../../fonts/Muli/mulish-v7-latin-regular.ttf") format("truetype"), url("../../fonts/Muli/mulish-v7-latin-regular.svg#Mulish") format("svg");
+}
+.muli {
+  font-family: Mulish, Helvetica, Arial, sans-serif;
+}
+
+.background {
+  background: url("../../img/bg-pattern.png"), linear-gradient(90deg, #da2431, #7a4397);
+}
+.background .btnHover {
+  border-radius: 30px;
+  border-color: white;
+  background-color: transparent;
+  transition: border-color, background-color;
+}
+
+.menu {
+  background-color: white;
+}
+
+/* na itt pl. a btnHover az a background class-on belül van, ezért ezt át lehet alakítani scss-re, pl így
+    .background {
+        .btnHover {
+            border-radius: 30px;
+            border-color: white;
+            background-color: transparent;
+            transition: border-color, background-color;
+        }
+    } */
+/* végig kell nézni hogy mi az amit így egymásba lehet ágyazni(nesting) mint a background-ot és a btnHover-t és azokat egymásba kell ágyazni */
+/* a .btnHover és a .btnHover2:hover is egymásba ágyazható scss-el!!! */
+/* végig kell nézni, hogy mi az az érték amit többször használsz a css-ben, pl. a fdcc52 színt több helyen is használod, ezért abból csinálj scss változót, tudod a $-al */
+.btnHover:hover {
+  background-color: #fdcc52;
+  border-color: #fdcc52;
+  /* ez itt alább mi a kutyafüle??? egy szín nem lehet 0.3s */
+  background-color: 0.3s;
+  border-color: 0.3s;
+}
+
+.positionA {
+  position: absolute;
+  width: 80%;
+}
+
+.positionR {
+  position: relative;
+}
+
+.googleLink {
+  width: 18rem;
+}
+
+/* itt is látok ismétlődő színeket, amikből variable-t kell fabrikálnod */
+.line {
+  border-color: #a83463;
+}
+
+.icon {
+  margin: 0 auto;
+  color: #a83463;
+}
+
+.phone {
+  background: url(../../img/bg-cta.jpg);
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+  height: 100vh;
+  background-size: cover;
+}
+
+/* a .btnHover és .btnHover2 class-okból csinálhatsz egy mixin-t, mixinre jó példa a hivatalos példa: https://sass-lang.com/guide  */
+.btnHover2 {
+  border-radius: 30px;
+  border-color: white;
+  color: white;
+  background-color: transparent;
+  transition: border-color, background-color;
+}
+
+.btnHover2:hover {
+  background-color: #fdcc52;
+  border-color: #fdcc52;
+  /* ezek is hibás color-ok itt szerintem */
+  background-color: 0.3s;
+  border-color: 0.3s;
+}
+
+.twitter {
+  background-color: #1da1f3;
+}
+
+.fa-twitter {
+  left: 9px;
+  position: relative;
+}
+
+.facebook {
+  background-color: #3b5999;
+}
+
+.fa-facebook {
+  padding: 10px;
+  left: 5px;
+  position: relative;
+}
+
+.google {
+  background-color: #dd4c39;
+}
+
+.fa-google {
+  padding: 10px;
+  position: relative;
+}
+
+.footer {
+  text-decoration: none;
+  color: grey;
+}
+
+.footer:hover {
+  text-decoration: none;
+  color: #fdcc52;
+}
+
+/*# sourceMappingURL=style.css.map */

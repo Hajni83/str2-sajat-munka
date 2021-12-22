@@ -36,8 +36,6 @@
 .btnHover:hover {
 background-color: #fdcc52;
 border-color:#fdcc52;
-background-color: 0.3s;
-border-color:0.3s;
 }
 
 
@@ -81,8 +79,6 @@ border-color:0.3s;
 .btnHover2:hover {
     background-color: #fdcc52;
     border-color:#fdcc52;
-    background-color: 0.3s;
-    border-color:0.3s;
     }
 
     .twitter {

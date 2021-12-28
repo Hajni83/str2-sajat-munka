@@ -6,10 +6,11 @@ let calculate = number =>{
 
 let Result=() =>{
     try{
-        result.value = eval(result.value)
+        let calc = Function("return " + result.value);
+        result.value = calc();
     }
     catch(err){
-        result.error();
+        alert("Hibás adatok!");
     }
 }
 

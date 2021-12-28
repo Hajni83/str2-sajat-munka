@@ -11,45 +11,46 @@
     <div class="container">
       <div class="calculator">
         <div class="calc-input">
-          <input type="text" />
+          <input type="text" id="inputText" placeholder="0"/>
         </div>
         <div class="calculator-buttons">
           <div class="calc-operations">
-            <button class="calc-button">&#43;</button>
-            <button class="calc-button">&#45;</button>
-            <button class="calc-button">&#215;</button>
-            <button class="calc-button">&#47;</button>
+            <button onclick="calculate('&#43;')" class="calc-button">&#43;</button>
+            <button onclick="calculate('&#45;')" class="calc-button">&#45;</button>
+            <button onclick="calculate('&#215;')" class="calc-button">&#215;</button>
+            <button onclick="calculate('&#47;')" class="calc-button">&#47;</button>
           </div>
           <div class="numbers">
             <div class="numbers-row">
                 <div class="calc-numbers">
-                    <button class="calc-button">7</button>
-                    <button class="calc-button">8</button>
-                    <button class="calc-button">9</button>
+                    <button onclick="calculate(7)" class="calc-button">7</button>
+                    <button onclick="calculate(8)" class="calc-button">8</button>
+                    <button onclick="calculate(9)" class="calc-button">9</button>
                   </div>
                   <div class="calc-numbers">
-                    <button class="calc-button">4</button>
-                    <button class="calc-button">5</button>
-                    <button class="calc-button">6</button>
+                    <button onclick="calculate(4)" class="calc-button">4</button>
+                    <button onclick="calculate(5)" class="calc-button">5</button>
+                    <button onclick="calculate(6)" class="calc-button">6</button>
                   </div>
                   <div class="calc-numbers">
-                    <button class="calc-button">1</button>
-                    <button class="calc-button">2</button>
-                    <button class="calc-button">3</button>
+                    <button onclick="calculate(1)" class="calc-button">1</button>
+                    <button onclick="calculate(2)" class="calc-button">2</button>
+                    <button onclick="calculate(3)" class="calc-button">3</button>
                   </div>
                   <div class="calc-numbers">
-                    <button class="calc-button">0</button>
-                    <button class="calc-button">&#46;</button>
-                    <button class="calc-button">&#67;</button>
+                    <button onclick="calculate(0)" class="calc-button">0</button>
+                    <button onclick="calculate('&#46;')" class="calc-button">&#46;</button>
+                    <button onclick="clr()" class="calc-button">&#67;</button>
                   </div>
               </div>
               <div class="numbers-equal">
-                <button class="calc-button-equal">&#61;</button>
+                <button onclick="Result()" class="calc-button-equal">&#61;</button>
               </div>
           </div>
         </div>        
           </div>
       </div>
     </div>
+    <script src="./main.js"></script>
   </body>
 </html>

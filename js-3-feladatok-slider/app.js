@@ -1,20 +1,31 @@
-let counter = 0;
-showSlides();
+let counter = 1;
 
-function showSlides() {
+let arrSlides = (n) => {
+  return showSlides((counter += n));
+};
+
+let currentSlide = (n) => {
+  return showSlides((counter = n));
+};
+
+let showSlides = (n) => {
   let i;
   let slides = document.getElementsByClassName("images");
   let dots = document.getElementsByClassName("dot");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+  if (n > slides.length) {
+    counter = 1;
   }
-  counter++;
-  if (counter > slides.length) {counter = 1}
+  if (n < 1) {
+    counter = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[counter - 1].style.display = "block";
+  dots[counter - 1].className += " active";
+};
 
- for (i = 0; i < dots.length; i++) {
-     dots[i].className = dots[i].className.replace(" active", "");
-   }
-  slides[counter-1].style.display = "block";  
-  dots[counter-1].className += " active";
-  setTimeout(showSlides, 3000);
-}
+showSlides(counter);

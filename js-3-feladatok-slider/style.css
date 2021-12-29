@@ -1,0 +1,74 @@
+*{
+    box-sizing: border-box;
+}
+
+.background {
+    background-color: #dae9da;
+    padding-top: 20px;
+    padding-bottom:30px;
+}
+
+.images{
+    display:none;
+    
+}
+
+.fade {
+    animation-name: fadeInUpSD;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {opacity: 0.3}
+    to {opacity: 1}
+}
+
+img{
+    vertical-align:middle;
+}
+
+.carousel-container{
+    max-width:1000px;
+    position:relative;
+    margin:auto;
+}
+
+.text {
+    color: white;
+    font-size: 25px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center; 
+}
+
+.numbertext {
+    color: white;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+
+  .dots {
+      text-align: center;
+  }
+  .dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor:pointer;
+  }
+
+  .dot:hover {
+      background-color: #707070;
+  }
+
+  .active {
+    background-color: #717171;
+  }

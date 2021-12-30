@@ -14,7 +14,7 @@
 }
 
 .fade {
-    animation-name: fadeInUpSD;
+    animation-name: fade;
     animation-duration: 1s;
 }
 
